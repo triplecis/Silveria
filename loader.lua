@@ -1,5 +1,9 @@
-print('Main load'); 
-local ok, version = pcall(function(); return game:HttpGet('https://raw.githubusercontent.com/triplecis/Silveria/refs/heads/main/version.txt'); end); local version = ok and version:gsub('%s+', '') or 'Unknown'
+print('Main load')
+
+local ok, rawVersion = pcall(function()
+    return game:HttpGet('https://raw.githubusercontent.com/triplecis/Silveria/refs/heads/main/version.txt')
+end)
+local version = ok and rawVersion:gsub('%s+', '') or 'Unknown'
 
 --[[ Services ]]--
 _Players = game:GetService("Players")
