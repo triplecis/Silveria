@@ -1,5 +1,5 @@
-local PlayersGroupbox = _Tabs.InGame:AddRightGroupbox('Players')
-local CommandsGroupbox = _Tabs.InGame:AddLeftGroupbox('Commands')
+local PlayersGroupbox = _Tabs.Lobby:AddRightGroupbox('Players')
+local CommandsGroupbox = _Tabs.Lobby:AddLeftGroupbox('Commands')
 
 --[[ inGame / Playerslist ]]--
 

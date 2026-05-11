@@ -1,3 +1,4 @@
+--[[
 print('Main load')
 
 --[[
@@ -7,9 +8,7 @@ end)
 local version = ok and version:gsub('%s+', '') or 'Unknown'
 
 print('Silveria Version: ' .. version)
-]]--
 
---[[ Services ]]--
 _Players = game:GetService("Players")
 _RunService = game:GetService("RunService")
 _UserInputService = game:GetService("UserInputService")
@@ -29,13 +28,11 @@ _LocalRoot = _LocalCharacter:WaitForChild("HumanoidRootPart")
 _Mouse = _Player:GetMouse()
 _Workspace = workspace or Workspace
 
---[[ Executor / Game Info ]]--
 local Executor = identifyexecutor and identifyexecutor() or "Unknown"
 _PlaceId = game.PlaceId
 _JobId = game.JobId
 _GameId = game.GameId
 
---[[ Linoria ]]--
 _Linoria = {
     Library = loadstring(game:HttpGet('https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/Library.lua'))(),
     ThemeManager = loadstring(game:HttpGet('https://raw.githubusercontent.com/violin-suzutsuki/LinoriaLib/main/addons/ThemeManager.lua'))(),
@@ -110,7 +107,6 @@ _Tabs = {
     Game = _Window:AddTab('Game'),
 }
 
---[[ Functions ]]--
 local function loadModule(url)
     local ok, err = pcall(function()
         loadstring(game:HttpGet(url .. '?t=' .. os.time()))()
@@ -132,3 +128,4 @@ if _GameModules[_PlaceId] then
 else
     print('No specific module for this game, universal only.')
 end
+]]--

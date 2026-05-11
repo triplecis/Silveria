@@ -44,7 +44,7 @@ _Linoria.ThemeManager:SetFolder('Silveria/themes')
 _Linoria.SaveManager:SetFolder('Silveria/configs')
 
 _Window = _Linoria.Library:CreateWindow({
-    Title = '◈ Silveria'... (version ~= 'Unknown' and (' | v' .. version) or ''),
+    Title = '◈ Silveria' .. (version ~= 'Unknown' and (' | v' .. version) or ''),
     Center = true,
     AutoShow = true,
     TabPadding = 8,
@@ -71,10 +71,10 @@ local function cleanGameName(name)
 end
 
 local MarketplaceService = game:GetService("MarketplaceService")
-local success, info = pcall(function() return MarketplaceService:GetProductInfo(_PlaceId) end)
+local success, info = pcall(function() return MarketplaceService:GetProductInfo(PlaceId) end)
 local gameName = success and cleanGameName(info.Name) or 'Game'
 
-local _GameModules = {
+local GameModules = {
     [5523851880] = 'https://raw.githubusercontent.com/triplecis/Silveria/refs/heads/main/Games/8ballpoolclassic.lua', -- 8 Ball Pool Classic
     [6722921118] = 'https://raw.githubusercontent.com/triplecis/Silveria/refs/heads/main/Games/colorbook.lua', -- Color Book
     [277751860] = 'https://raw.githubusercontent.com/triplecis/Silveria/refs/heads/main/Games/epicminigames.lua', -- Epic Minigames
@@ -98,9 +98,9 @@ _Tabs = {
     Universal = _Window:AddTab('Universal'),
     Game = hasGameModule and _Window:AddTab(gameName) or nil,
     Scripts = _Window:AddTab('Scripts'),
+    Lobby = _Window:AddTab('Lobby'),
     Settings = _Window:AddTab('Settings'),
     Control = _Window:AddTab('Control'),
-    Game = _Window:AddTab('Game'),
 }
 
 --[[ Functions ]]--
